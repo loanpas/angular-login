@@ -1,0 +1,50 @@
+<ion-header no-border>
+  <ion-label class="login-header" padding>
+    <ion-img class="logo-img" src="../assets/logo.png"></ion-img>
+  </ion-label>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <ion-row heading-colum-lr>
+      <h1 big-heading>Restablecer</h1>
+      <h2 ico-heading [routerLink]="['/login']">
+        <ion-icon slot="end" name="close-circle-outline"></ion-icon>
+      </h2>
+    </ion-row>
+
+    <ion-label line-space></ion-label>
+
+    <ion-label>
+      <p small-title>He olvidado la contraseña.</p>
+      <p>Te enviaremos un código para restablecer la contraseña.</p>
+    </ion-label>
+
+    <ion-label line-space></ion-label>
+
+    <!-- dirección de correo electrónico -->
+    <ion-item transparent>
+      <ion-icon icon-small name="person-outline"></ion-icon>
+      <ion-input clearInput placeholder="Dirección de correo electrónico" type="text"></ion-input>
+    </ion-item>
+
+    <!-- password -->
+    <ion-item transparent>
+      <ion-icon icon-small name="lock-closed-outline"></ion-icon>
+      <ion-input clearInput placeholder="Contraseña" type="password"></ion-input>
+    </ion-item>
+
+    <!-- confirmar password -->
+    <ion-item transparent>
+      <ion-icon icon-small name="lock-closed-outline"></ion-icon>
+      <ion-input clearInput placeholder="Confirmar contraseña" type="password"></ion-input>
+    </ion-item>
+
+    <ion-label line-space></ion-label>
+
+    <!-- botón restablecer -->
+    <ion-button ion-button-font expand="block" (click)="goToForget()">
+      Restablecer
+    </ion-button>
+  </div>
+</ion-content>

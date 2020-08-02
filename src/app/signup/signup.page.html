@@ -1,0 +1,61 @@
+<ion-header no-border>
+  <ion-label class="login-header" padding>
+    <ion-img class="logo-img" src="../assets/logo.png"></ion-img>
+  </ion-label>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <ion-row heading-colum-lr>
+      <h1 big-heading>Registro</h1>
+      <h2 ico-heading [routerLink]="['/login']">
+        <ion-icon slot="end" name="close-circle-outline"></ion-icon>
+      </h2>
+    </ion-row>
+
+    <!-- email -->
+    <ion-item transparent>
+      <ion-icon icon-small name="person-outline"></ion-icon>
+      <ion-input clearInput placeholder="Dirección de correo electrónico" type="text"></ion-input>
+    </ion-item>
+
+    <!-- password -->
+    <ion-item transparent>
+      <ion-icon icon-small name="lock-closed-outline"></ion-icon>
+      <ion-input clearInput placeholder="Contraseña" type="password"></ion-input>
+    </ion-item>
+
+    <!-- confirmar password -->
+    <ion-item transparent>
+      <ion-icon icon-small name="lock-closed-outline"></ion-icon>
+      <ion-input clearInput placeholder="Confirmar contraseña" type="password"></ion-input>
+    </ion-item>
+
+    <ion-label line-space></ion-label>
+
+    <!-- botón Iniciar sesión -->
+    <ion-button ion-button-font expand="block" (click)="goToSignup()">
+      Registrarse
+    </ion-button>
+
+    <div line-space></div>
+
+    <!-- botón facebook -->
+    <ion-button expand="block" color="tertiary" (click)="goToRegisterFacebook()">
+      <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      Continuar con Facebook
+    </ion-button>
+
+    <!-- botón google -->
+    <ion-button expand="block" color="danger" (click)="goToRegisterGoogle()">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      Continuar con Google+
+    </ion-button>
+
+    <!-- ya tienes una cuenta? Iniciar Sesión -->
+    <ion-label class="link-signup">
+      <p>Ya tienes una cuenta? <strong [routerLink]="['/login']" class="link-inicio-sesion">Iniciar Sesión</strong></p>
+    </ion-label>
+
+  </div>
+</ion-content>

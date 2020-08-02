@@ -1,0 +1,64 @@
+<ion-header no-border>
+  <ion-label class="login-header" padding>
+    <ion-img class="logo-img" src="../assets/logo.png"></ion-img>
+  </ion-label>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <ion-row heading-colum-lr>
+      <h1 big-heading>Login</h1>
+      <!--
+      <h2 small-heading [routerLink]="['/signup']">
+        <ion-button ion-button-signup slot="end" size="small">Registrarse</ion-button>
+      </h2>-->
+    </ion-row>
+
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button ion-button-signup [routerLink]="['/signup']">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <form [formGroup]="flogin">
+
+      <!-- dirección de correo electrónico -->
+      <ion-item transparent>
+        <ion-icon icon-small name="person-outline"></ion-icon>
+        <ion-input #username clearInput formControlName="username" placeholder="Dirección de correo electrónico" type="email"></ion-input>
+      </ion-item>
+
+      <!-- password -->
+      <ion-item transparent>
+        <ion-icon icon-small name="lock-closed-outline"></ion-icon>
+        <ion-input #password clearInput formControlName="password" placeholder="Contraseña" type="password"></ion-input>
+      </ion-item>
+
+      <!-- olvidaste la contraseña -->
+      <ion-label class="link" [routerLink]="['/forget']">
+        Olvidaste la contraseña?
+      </ion-label>
+
+      <ion-label line-space></ion-label>
+
+      <!-- botón Iniciar sesión -->
+      <ion-button ion-button-font expand="block" (click)="goToLogIn(username, password)">
+        Iniciar Sesión
+      </ion-button>
+    </form>
+
+    <div line-space></div>
+
+    <!-- botón facebook -->
+    <ion-button expand="block" color="tertiary" (click)="goToFacebook()">
+      <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      Continuar con Facebook
+    </ion-button>
+
+    <!-- botón google -->
+    <ion-button expand="block" color="danger" (click)="goToGoogle()">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      Continuar con Google+
+    </ion-button>
+  </div>
+</ion-content>
